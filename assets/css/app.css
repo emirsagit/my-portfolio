@@ -1,0 +1,157 @@
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(''),
+    url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-r    woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* poppins-700 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local(''),
+    url('../fonts/poppins-v15-latin-700.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-7    ') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* poppins-500 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local(''),
+    url('../fonts/poppins-v15-latin-500.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-5    ') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  height: 48px;
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-text {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #6070ff;
+  padding-left: 24px;
+}
+
+.nav-button {
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+  padding-right: 24px;
+}
+
+.flex {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 114px 24px;
+}
+
+.header-title {
+  font-family: Poppins, sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0;
+  text-align: left;
+  color: #172b4d;
+  margin-bottom: 0;
+}
+
+.bg-header {
+  background-image: url('../img/bg-header.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 718px;
+  width: auto;
+  margin-top: 48px;
+}
+
+.header-text {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: left;
+  color: #344563;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-title {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7f8cff;
+  margin-top: 0;
+  background: transparent;
+  margin-bottom: 8px;
+}
+
+.social-title:hover {
+  color: #6070ff;
+}
+
+.social-title:focus {
+  color: #2230d2;
+}
+
+.social-icon-item {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.social-list {
+  display: inline-flex;
+}
