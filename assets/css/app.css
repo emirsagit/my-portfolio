@@ -35,8 +35,14 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 header {
-  height: 718px;
+  height: 48px;
   display: flex;
   flex-direction: column;
 }
@@ -45,6 +51,15 @@ nav {
   display: flex;
   flex-direction: column;
   height: 48px;
+}
+
+button:hover{
+  background-color:#6070FF;
+  ;
+}
+
+button:focus{
+  background: #2230D2;
 }
 
 .nav-flex {
@@ -98,7 +113,7 @@ nav {
 .bg-header {
   background-image: url('../img/bg-header.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   height: 718px;
   width: auto;
   margin-top: 48px;
@@ -128,8 +143,24 @@ nav {
   line-height: 24px;
   color: #7f8cff;
   margin-top: 0;
+  background: transparent;
+  margin-bottom: 8px;
+}
+
+.social-title:hover {
+  color: #6070FF;
+}
+
+.social-title:focus {
+  color: #2230D2;
 }
 
 .social-icon-item {
   padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.social-list {
+  display: inline-flex;
 }
