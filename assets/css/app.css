@@ -53,13 +53,12 @@ nav {
   height: 48px;
 }
 
-button:hover{
-  background-color:#6070FF;
-  ;
+button:hover {
+  background-color: #6070ff;
 }
 
-button:focus{
-  background: #2230D2;
+button:focus {
+  background: #2230d2;
 }
 
 .nav-flex {
@@ -148,11 +147,11 @@ button:focus{
 }
 
 .social-title:hover {
-  color: #6070FF;
+  color: #6070ff;
 }
 
 .social-title:focus {
-  color: #2230D2;
+  color: #2230d2;
 }
 
 .social-icon-item {
