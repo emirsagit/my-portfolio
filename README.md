@@ -14,9 +14,9 @@
 
 To get a local copy up and running follow these simple example steps.
 
-``` git clone https://github.com/emirsagit/Review-Past-Project.git ```
+``` git clone https://github.com/emirsagit/my-portfolio.git ```
 
-``` cd Review-Past-Project ```
+``` cd my-portfolio ```
 
 ## Authors
 
