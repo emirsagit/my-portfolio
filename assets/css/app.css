@@ -64,6 +64,61 @@ ul {
   padding: 0;
 }
 
+/* general items */
+.bg-white-button {
+  background: white;
+  border: 1px solid #6070FF;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  color: #396DF2;
+}
+
+.bg-white-button:hover {
+  background: #6070ff;
+  color: white;
+}
+
+.bg-white-button:focus {
+  background: #2230d2;
+  color: white;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.social-title {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7f8cff;
+  margin-top: 12px;
+  background: transparent;
+  margin-bottom: 8px;
+}
+
+.social-icon-item {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.social-list {
+  display: inline-flex;
+}
+/* end general items */
+
+/* nav */
 header {
   height: 48px;
   display: flex;
@@ -100,13 +155,9 @@ nav {
   font-size: 0;
   padding-right: 24px;
 }
+/* end nav */
 
-.flex {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
+/* header */
 .header-wrapper {
   display: flex;
   flex-direction: column;
@@ -143,36 +194,9 @@ nav {
   text-align: left;
   color: #344563;
 }
-
-.social {
-  display: flex;
-  flex-direction: column;
-}
-
-.social-title {
-  font-family: Poppins, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #7f8cff;
-  margin-top: 12px;
-  background: transparent;
-  margin-bottom: 8px;
-}
-
-.social-icon-item {
-  padding-right: 10px;
-  display: flex;
-  flex-direction: row;
-}
-
-.social-list {
-  display: inline-flex;
-}
+/* end header */
 
 /* work */
-
 .work {
   padding: 114px 24px;
   display: grid;
@@ -270,30 +294,6 @@ nav {
   margin-bottom: 24px;
 }
 
-.work-button {
-  background: white;
-  border: 1px solid #6070FF;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
-  font-family: Poppins;
-  font-weight: 500;
-  font-size: 17px;
-  letter-spacing: 0.03em;
-  color: #396DF2;
-}
-
-.work-button:hover {
-  background: #6070ff;
-  color: white;
-}
-
-.work-button:focus {
-  background: #2230d2;
-  color: white;
-}
-
 .work-item-image {
   max-width: 100%;
 }
@@ -335,7 +335,37 @@ nav {
     width: 100%;
   }
 }
+/* end work */
 
+/* about myself */
+.about {
+  background: white;
+  border: none;
+  border-radius: 0 100px 0 0px;
+  padding: 114px 24px;
+}
 
+.about-title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 52px;
+  color: #172B4D;
+  margin-bottom: 12px;
+}
 
+.about-p {
+  font-family: Poppins;
+  font-size: 16px;
+  line-height: 24px;
+  color: #344563;
+}
 
+.about-social a {
+  margin-bottom: 26px;
+}
+
+.about-social ul > li {
+  padding-right: 10px;
+}
