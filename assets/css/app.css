@@ -20,6 +20,7 @@ body {
   font-style: normal;
   font-weight: 400;
   src: local(''), url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'), url('../fonts/poppins-v15-latin-r    woff') format('woff');
+
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -30,6 +31,7 @@ body {
   font-style: normal;
   font-weight: 700;
   src: local(''), url('../fonts/poppins-v15-latin-700.woff2') format('woff2'), url('../fonts/poppins-v15-latin-7    ') format('woff');
+
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -40,6 +42,7 @@ body {
   font-style: normal;
   font-weight: 500;
   src: local(''), url('../fonts/poppins-v15-latin-500.woff2') format('woff2'), url('../fonts/poppins-v15-latin-5    ') format('woff');
+
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -306,9 +309,11 @@ nav {
   .work-header-items {
     flex-direction: column;
   }
+
   .work-header-item-round {
     display: none;
   }
+
   .work-header-items p {
     padding-bottom: 8px;
   }
@@ -319,6 +324,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .work-tag {
     margin-bottom: 8px;
   }
@@ -366,7 +372,7 @@ nav {
   margin-bottom: 26px;
 }
 
-.about-social ul>li {
+.about-social ul > li {
   padding-right: 10px;
 }
 
