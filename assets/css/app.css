@@ -20,6 +20,7 @@ body {
   font-style: normal;
   font-weight: 400;
   src: local(''), url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'), url('../fonts/poppins-v15-latin-r    woff') format('woff');
+
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -30,6 +31,7 @@ body {
   font-style: normal;
   font-weight: 700;
   src: local(''), url('../fonts/poppins-v15-latin-700.woff2') format('woff2'), url('../fonts/poppins-v15-latin-7    ') format('woff');
+
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -40,6 +42,7 @@ body {
   font-style: normal;
   font-weight: 500;
   src: local(''), url('../fonts/poppins-v15-latin-500.woff2') format('woff2'), url('../fonts/poppins-v15-latin-5    ') format('woff');
+
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -61,17 +64,19 @@ ul {
   padding: 0;
 }
 
-input::placeholder, textarea::placeholder {
-  font-family: Poppins;
+input::placeholder,
+textarea::placeholder {
+  font-family: Poppins, sans-serif;
   font-size: 15px;
-  color: #B3BAC5;
+  color: #b3bac5;
 }
 
-input, textarea {
-  font-family: Poppins;
+input,
+textarea {
+  font-family: Poppins, sans-serif;
   font-size: 17px;
   line-height: 20px;
-  color: #172B4D;
+  color: #172b4d;
 }
 
 /* general items */
@@ -319,9 +324,11 @@ nav {
   .work-header-items {
     flex-direction: column;
   }
+
   .work-header-item-round {
     display: none;
   }
+
   .work-header-items p {
     padding-bottom: 8px;
   }
@@ -332,6 +339,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .work-tag {
     margin-bottom: 8px;
   }
@@ -379,7 +387,7 @@ nav {
   margin-bottom: 26px;
 }
 
-.about-social ul>li {
+.about-social ul > li {
   padding-right: 10px;
 }
 
@@ -452,7 +460,7 @@ nav {
 }
 
 .contact-container {
-  background: url('../img/bg-footer.png') no-repeat, #6070FF;
+  background: url('../img/bg-footer.png') no-repeat, #6070ff;
   background-position: top 25px right;
   padding: 103px 4vh 25px 4vh;
   border-radius: 80px 0 0 0;
@@ -470,20 +478,20 @@ nav {
 }
 
 .contact-header h2 {
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-weight: bold;
   font-size: 40px;
   line-height: 52px;
-  color: #FFFFFF;
+  color: #fff;
   margin-bottom: 12px;
 }
 
 .contact-header p {
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 20px;
   line-height: 28px;
   text-align: center;
-  color: #EBEBFF;
+  color: #ebebff;
   margin-bottom: 40px;
 }
 
@@ -494,13 +502,13 @@ nav {
 
 .form-element {
   margin-bottom: 20px;
-  border: 1px solid #CFD8DC;
+  border: 1px solid #cfd8dc;
   border-radius: 8px;
   padding: 15px 38px 15px 16px;
   background: white;
 }
 
-.form-element>textarea {
+.form-element > textarea {
   resize: none;
 }
 
@@ -515,10 +523,12 @@ nav {
 
 .shape {
   position: absolute;
-  left: calc(50% - 134px/2 - 0.5px);
+  left: calc(50% - 134px / 2 - 0.5px);
   bottom: 8px;
   width: 134px;
   height: 5px;
-  background: #0D151E;
+  background: #0d151e;
   border-radius: 10px;
 }
+
+/* end contact  */
