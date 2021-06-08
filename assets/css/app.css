@@ -521,14 +521,5 @@ nav {
   outline: none;
 }
 
-.shape {
-  position: absolute;
-  left: calc(50% - 134px / 2 - 0.5px);
-  bottom: 8px;
-  width: 134px;
-  height: 5px;
-  background: #0d151e;
-  border-radius: 10px;
-}
 
 /* end contact  */
