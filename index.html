@@ -431,43 +431,55 @@
 		</section>
 
 		<section class="contact">
-			<h2>Contact Me</h2>
-			<p>
-				If you have an application you are interested in developing, a feature
-				that you need built or a project that needs coding. I’d love to help
-				with it
-			</p>
-			<form action="https://formspree.io/f/xzbygpgy" method="POST">
-				<ul class="form-container">
-					<li>
-						<input
-							type="text"
-							maxlength="30"
-							placeholder="Your Name"
-							required
-						/>
-					</li>
-					<li>
-						<input
-							type="email"
-							maxlength="30"
-							placeholder="Email Address"
-							required
-						/>
-					</li>
-					<li>
-						<textarea
-							name="message"
-							maxlength="500"
-							cols="30"
-							rows="10"
-						></textarea>
-					</li>
-					<li>
-						<button class="bg-white-button" type="submit">Get It Touch</button>
-					</li>
-				</ul>
-			</form>
+			<div class="contact-container">
+				<div class="contact-header">
+					<h2>Contact me</h2>
+					<p>
+						If you have an application you are interested in developing, a
+						feature that you need built or a project that needs coding. I’d love
+						to help with it
+					</p>
+				</div>
+				<form action="https://formspree.io/f/xzbygpgy" method="POST">
+					<ul class="form-container">
+						<li class="form-element">
+							<input
+								type="text"
+								maxlength="30"
+								placeholder="Name"
+								required
+								class="form-input"
+							/>
+						</li>
+						<li class="form-element">
+							<input
+								type="email"
+								maxlength="30"
+								placeholder="Email"
+								required
+								class="form-input"
+							/>
+						</li>
+						<li class="form-element">
+							<textarea
+								name="message"
+								maxlength="500"
+								cols="30"
+								rows="7"
+								required
+								class="form-input"
+								placeholder="Write your message"
+							></textarea>
+						</li>
+						<li class="form-element-button">
+							<button class="bg-white-button" type="submit">
+								Get It Touch
+							</button>
+						</li>
+					</ul>
+				</form>
+				<span class="shape"></span>
+			</div>
 		</section>
 	</body>
 </html>
