@@ -8,7 +8,9 @@
 
 ## Built With
 
-- HTML, CSS
+- HTML & CSS
+- Github workflow
+- Linters(Lighthouse, stylelint, Webhint)
 
 ## Getting Started
 
