@@ -7,6 +7,20 @@ button {
   border: none;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+button:hover {
+  animation-name: button_moving;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes button_moving {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
 }
 
 /* poppins-regular - latin */
@@ -50,6 +64,7 @@ body {
 a {
   text-decoration: none;
   color: #344563;
+  transition: color 0.5s ease-in-out;
 }
 
 a:hover {
@@ -81,6 +96,10 @@ textarea {
 
 /* general items */
 
+.pointer {
+  cursor: pointer;
+}
+
 .bg-white-button {
   background: white;
   border: 1px solid #6070ff;
@@ -92,6 +111,9 @@ textarea {
   font-size: 17px;
   letter-spacing: 0.03em;
   color: #396df2;
+  transition: color 0.5s ease-in-out, background 0.8s ease-in-out;
+  cursor: pointer;
+  user-select: none;
 }
 
 .bg-white-button:hover {
@@ -123,6 +145,11 @@ textarea {
   padding-right: 10px;
   display: flex;
   flex-direction: row;
+  color: #505f79;
+}
+
+.social-icon-item:hover {
+  color: #2230d2;
 }
 
 .social-list {
@@ -169,12 +196,30 @@ nav {
   font-weight: 700;
   font-size: 18px;
   color: #6070ff;
+  animation: rotate-360 2s 1 ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-360 {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 .nav-button {
   background: transparent;
   border: none !important;
   font-size: 0;
+  color: #6070ff;
+  transition: color 0.5s ease-in-out;
+}
+
+.nav-button:hover {
+  color: #2230d2;
 }
 
 /* end nav */
@@ -238,6 +283,14 @@ nav {
   border: 1px solid #dfe1e6;
   box-sizing: border-box;
   border-radius: 16px;
+}
+
+.work-item-image {
+  transition: transform 1s ease-in-out;
+}
+
+.work-item-image:hover {
+  transform: scale(1.07, 1.09);
 }
 
 .work-item h3 {
