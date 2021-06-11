@@ -10,17 +10,19 @@ button {
   cursor: pointer;
   user-select: none;
 }
+
 button:hover {
   animation-name: button_moving;
-  animation-duration: 0.20s;
-  animation-iteration-count:infinite;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes button_moving {
-  0%{transform: rotate(0deg);}
-  50%{transform: rotate(5deg);}
-  100%{transform: rotate(-5deg);}
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
 }
+
 /* poppins-regular - latin */
 
 @font-face {
@@ -195,7 +197,7 @@ nav {
   font-size: 18px;
   color: #6070ff;
   animation: rotate-360 2s 1 ease-in-out;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
 }
 
 @keyframes rotate-360 {
