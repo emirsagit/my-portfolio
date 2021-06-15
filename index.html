@@ -51,7 +51,7 @@
         </h1>
         <p class="header-text">I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.</p>
         <div class="social">
-          <a class="social-title" href="#"><h4>LET’S CONNECT</h4></a>
+          <a class="social-contact-button" href="#">LET’S CONNECT</a>
           <ul class="social-icons">
             <li class="social-list">
               <a href="#" class="social-icon-item">
@@ -87,7 +87,7 @@
         <li class="work-item">
           <img src="./assets/img/work/SnapshootPortfolio1.png" alt="tonic" srcset="./assets/img/work/SnapshootPortfolio1.png 295w, ./assets/img/work/SnapshootPortfolio1desktop.png 544w" sizes="(max-width: 600px) 295px, 544px" class="work-item-image" />
           <div class="work-content">
-            <h3>Tonic</h3>
+            <p class="project-name">Tonic</p>
             <div class="work-header-items">
               <p class="work-header-item-one work-header-item-margin">CANOPY</p>
               <span class="work-header-item-round work-header-item-margin"></span>
@@ -107,7 +107,7 @@
         <li class="work-item reverse">
           <img src="./assets/img/work/SnapshootPortfolio1.png" alt="tonic" srcset="./assets/img/work/SnapshootPortfolio2.png 295w, ./assets/img/work/SnapshootPortfolio2desktop.png 544w" sizes="(max-width: 600px) 295px, 544px" class="work-item-image reverse-image" />
           <div class="work-content">
-            <h3>Multi-Post Stories</h3>
+            <p class="project-name">Multi-Post Stories</p>
             <div class="work-header-items">
               <p class="work-header-item-one work-header-item-margin">CANOPY</p>
               <span class="work-header-item-round work-header-item-margin"></span>
@@ -127,7 +127,7 @@
         <li class="work-item">
           <img src="./assets/img/work/SnapshootPortfolio1.png" alt="tonic" srcset="./assets/img/work/SnapshootPortfolio3.png 295w, ./assets/img/work/SnapshootPortfolio3desktop.png 544w" sizes="(max-width: 600px) 295px, 544px" class="work-item-image" />
           <div class="work-content">
-            <h3>Tonic</h3>
+            <p class="project-name">Tonic</p>
             <div class="work-header-items">
               <p class="work-header-item-one work-header-item-margin">CANOPY</p>
               <span class="work-header-item-round work-header-item-margin"></span>
@@ -147,7 +147,7 @@
         <li class="work-item reverse">
           <img src="./assets/img/work/SnapshootPortfolio1.png" alt="tonic" srcset="./assets/img/work/SnapshootPortfolio4.png 295w, ./assets/img/work/SnapshootPortfolio4desktop.png 544w" sizes="(max-width: 600px) 295px, 544px" class="work-item-image reverse-image" />
           <div class="work-content">
-            <h3>Multi-Post Stories</h3>
+            <p class="project-name">Multi-Post Stories</p>
             <div class="work-header-items">
               <p class="work-header-item-one work-header-item-margin">CANOPY</p>
               <span class="work-header-item-round work-header-item-margin"></span>
@@ -174,7 +174,7 @@
         </h2>
         <p class="about-p">Hello I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.</p>
         <div class="social about-social">
-          <a class="social-title" href="#"><h4>LET’S CONNECT</h4></a>
+          <a class="social-contact-button" href="#">LET’S CONNECT</a>
           <ul class="social-icons">
             <li class="social-list">
               <a href="#" class="social-icon-item">
@@ -261,13 +261,16 @@
         <form action="https://formspree.io/f/xzbygpgy" method="POST" class="form">
           <ul class="form-container">
             <li class="form-element">
-              <input name="name" type="text" maxlength="30" placeholder="Name" required class="form-input" />
+              <label for="name" class="sr-only">Your Name</label>
+              <input name="name" id="name" type="text" maxlength="30" placeholder="Name" required class="form-input" />
             </li>
             <li class="form-element">
-              <input name="email" type="email" placeholder="Email" required class="form-input" />
+              <label for="email" class="sr-only">Email Address</label>
+              <input name="email" type="email" id="email" placeholder="Email" required class="form-input" />
             </li>
             <li class="form-element">
-              <textarea name="message" maxlength="500" cols="30" rows="7" required class="form-input" placeholder="Write your message"></textarea>
+              <label for="message" class="sr-only">Your Message</label>
+              <textarea name="message" maxlength="500" id="message" cols="30" rows="7" required class="form-input" placeholder="Write your message"></textarea>
             </li>
             <li class="form-element-button">
               <button class="bg-white-button" type="submit">Get It Touch</button>
