@@ -14,13 +14,21 @@ button {
 button:hover {
   animation-name: button_moving;
   animation-duration: 0.2s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 4;
 }
 
 @keyframes button_moving {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(-5deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
 }
 
 /* poppins-regular - latin */
@@ -132,7 +140,7 @@ textarea {
   align-items: flex-start;
 }
 
-.social-title {
+.social-contact-button {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -196,8 +204,7 @@ nav {
   font-weight: 700;
   font-size: 18px;
   color: #6070ff;
-  animation: rotate-360 2s 1 ease-in-out;
-  animation-iteration-count: infinite;
+  animation: rotate-360 3s 1 ease-in-out;
 }
 
 @keyframes rotate-360 {
@@ -293,7 +300,7 @@ nav {
   transform: scale(1.07, 1.09);
 }
 
-.work-item h3 {
+.project-name {
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
@@ -450,6 +457,15 @@ nav {
   font-size: 15px;
   line-height: 20px;
   color: #253858;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 /* end about */
