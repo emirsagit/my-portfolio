@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/app.css" />
     <title>Emir Sağıt Personal Website</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDKMRZSJNQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-GDKMRZSJNQ");
+    </script>
   </head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDKMRZSJNQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-GDKMRZSJNQ");
-  </script>
   <body>
     <header>
       <nav>
@@ -31,15 +31,17 @@
           </div>
         </div>
         <ul class="nav-items mobile-hidden" id="navigation">
-          <li class="nav-item nav-close-button" id="close-button"><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.293 5.293a1 1 0 011.414 0L12 10.586l5.293-5.293a1 1 0 111.414 1.414L13.414 12l5.293 5.293a1 1 0 01-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 01-1.414-1.414L10.586 12 5.293 6.707a1 1 0 010-1.414z" fill="#fff"/></svg></li>
-          <li class="nav-item">
-            <a href="#portfolio" class="text-white" onClick="toggle()">Portfolio</a>
+          <li class="nav-close-element" id="close-button">
+            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.293 5.293a1 1 0 011.414 0L12 10.586l5.293-5.293a1 1 0 111.414 1.414L13.414 12l5.293 5.293a1 1 0 01-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 01-1.414-1.414L10.586 12 5.293 6.707a1 1 0 010-1.414z" fill="#fff" /></svg>
           </li>
           <li class="nav-item">
-            <a href="#about"  class="text-white" onClick="toggle()">About</a>
+            <a href="#portfolio" class="text-white lg-text-blue" onClick="toggle()">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a href="#contact" class="text-white" onClick="toggle()">Contact</a>
+            <a href="#about" class="text-white lg-text-blue" onClick="toggle()">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="text-white lg-text-blue" onClick="toggle()">Contact</a>
           </li>
         </ul>
       </nav>
