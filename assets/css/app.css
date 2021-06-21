@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 button {
   border: none;
   text-align: center;
@@ -97,6 +101,10 @@ input, textarea {
 
 /* general items */
 
+.text-white {
+  color: white;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -173,22 +181,27 @@ nav {
   height: 100%;
   width: 100%;
   top: 0;
-  background-color: rgba(96, 112, 255, 0.9); 
+  background-color: rgba(96, 112, 255, 0.9);
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
 }
 
-.nav-items .nav-close-button  {
+.mobile-hidden {
+  display: none;
+}
+
+.nav-items .nav-close-button {
   align-self: flex-end;
+  margin: 35px 38px 0 0;
 }
 
 .nav-item {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 20px;
-  color: #344563;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
   z-index: 50;
+  margin: 0 0 40px 28px;
 }
 
 .nav-item:last-of-type {
@@ -208,6 +221,7 @@ nav {
   font-size: 18px;
   color: #6070ff;
   animation: rotate-360 3s 1 ease-in-out;
+  margin-left: 24px;
 }
 
 @keyframes rotate-360 {
@@ -225,6 +239,7 @@ nav {
   font-size: 0;
   color: #6070ff;
   transition: color 0.5s ease-in-out;
+  margin-right: 24px;
 }
 
 .nav-button:hover {

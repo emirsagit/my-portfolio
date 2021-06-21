@@ -30,16 +30,16 @@
             </button>
           </div>
         </div>
-        <ul class="nav-items">
-          <li class="nav-item nav-close-button"><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.293 5.293a1 1 0 011.414 0L12 10.586l5.293-5.293a1 1 0 111.414 1.414L13.414 12l5.293 5.293a1 1 0 01-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 01-1.414-1.414L10.586 12 5.293 6.707a1 1 0 010-1.414z" fill="#fff"/></svg></li>
+        <ul class="nav-items mobile-hidden" id="navigation">
+          <li class="nav-item nav-close-button" id="close-button"><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.293 5.293a1 1 0 011.414 0L12 10.586l5.293-5.293a1 1 0 111.414 1.414L13.414 12l5.293 5.293a1 1 0 01-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 01-1.414-1.414L10.586 12 5.293 6.707a1 1 0 010-1.414z" fill="#fff"/></svg></li>
           <li class="nav-item">
-            <a href="#">Portfolio</a>
+            <a href="#portfolio" class="text-white" onClick="toggle()">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a href="#">About</a>
+            <a href="#about"  class="text-white" onClick="toggle()">About</a>
           </li>
           <li class="nav-item">
-            <a href="#">Contact</a>
+            <a href="#contact" class="text-white" onClick="toggle()">Contact</a>
           </li>
         </ul>
       </nav>
@@ -84,7 +84,7 @@
       </div>
     </section>
     <section>
-      <ul class="work">
+      <ul class="work" id="portfolio">
         <li class="work-item">
           <img src="./assets/img/work/SnapshootPortfolio1.png" alt="tonic" srcset="./assets/img/work/SnapshootPortfolio1.png 295w, ./assets/img/work/SnapshootPortfolio1desktop.png 544w" sizes="(max-width: 600px) 295px, 544px" class="work-item-image" />
           <div class="work-content">
@@ -167,7 +167,7 @@
         </li>
       </ul>
     </section>
-    <section class="about">
+    <section class="about" id="about">
       <div class="about-myself-wrapper">
         <h2 class="about-title">
           About <br />
@@ -253,7 +253,7 @@
         </li>
       </ul>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="contact-container">
         <div class="contact-header">
           <h2>Contact me</h2>
