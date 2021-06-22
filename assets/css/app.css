@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 button {
   border: none;
   text-align: center;
@@ -104,6 +108,10 @@ textarea {
 
 /* general items */
 
+.text-white {
+  color: white;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -171,21 +179,38 @@ textarea {
 nav {
   height: 48px;
   background: white;
-  padding: 0 24px;
+  padding: 0 0;
+  display: flex;
 }
 
 .nav-items {
   display: flex;
-  justify-content: flex-end;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: rgba(96, 112, 255, 0.9);
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.mobile-hidden {
+  display: none;
+}
+
+.nav-close-element {
+  align-self: flex-end;
+  margin: 35px 38px 0 0;
+  cursor: pointer;
 }
 
 .nav-item {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 20px;
-  color: #344563;
-  display: none;
-  padding-right: 32px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  z-index: 50;
+  margin: 0 0 40px 28px;
 }
 
 .nav-item:last-of-type {
@@ -205,6 +230,7 @@ nav {
   font-size: 18px;
   color: #6070ff;
   animation: rotate-360 3s 1 ease-in-out;
+  margin-left: 24px;
 }
 
 @keyframes rotate-360 {
@@ -223,6 +249,7 @@ nav {
   font-size: 0;
   color: #6070ff;
   transition: color 0.5s ease-in-out;
+  margin-right: 24px;
 }
 
 .nav-button:hover {
@@ -588,8 +615,29 @@ nav {
     display: none;
   }
 
+  .mobile-hidden {
+    display: flex;
+  }
+
+  .nav-items {
+    display: flex;
+    position: static;
+    background-color: white;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+  }
+
   .nav-item {
-    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+    padding-right: 32px;
+  }
+
+  .lg-text-blue {
+    color: #344563;
   }
 
   /* end nav */
