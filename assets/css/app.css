@@ -106,7 +106,20 @@ textarea {
   color: #172b4d;
 }
 
+hr {
+  border: 1px solid #ebecf0;
+  margin: 12px 0;
+}
+
 /* general items */
+
+.noscroll {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow-y: scroll;
+}
 
 .text-white {
   color: white;
@@ -394,6 +407,96 @@ nav {
   margin-bottom: 24px;
 }
 
+.popup-section {
+  background-color: rgba(128, 128, 128, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  justify-content: center;
+  z-index: 5;
+  box-sizing: content-box;
+}
+
+.popup-container {
+  position: relative;
+  width: 90%;
+  margin: 5%;
+  top: 0;
+  background: white;
+  padding: 0 16px;
+  display: none;
+  flex-direction: column;
+  border: 1px solid #dfe1e6;
+  box-sizing: border-box;
+  border-radius: 16px;
+  z-index: 10;
+  min-height: max-content;
+  height: max-content;
+}
+
+.popup-image {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.popup-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.close-popup {
+  color: black;
+}
+
+.popup-content {
+  padding-top: 12px;
+}
+
+.popup-content p {
+  padding-bottom: 12px;
+}
+
+.popup-tags {
+  display: flex;
+}
+
+.popup-tag {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: #ebebff;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: #6070ff;
+  margin-right: 8px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-button {
+  display: flex;
+}
+
+.popup-button-svg {
+  margin-left: 8px;
+}
+
 /* end work */
 
 /* about myself */
@@ -577,20 +680,16 @@ nav {
 }
 
 @media only screen and (max-width: 334px) {
-  .work-header-items {
-    flex-direction: column;
+  .work-item-image {
+    max-width: 100%;
   }
 
-  .work-header-item-round {
+  .work-header-items {
     display: none;
   }
 
-  .work-header-items p {
-    padding-bottom: 8px;
-  }
-
-  .work-item-image {
-    max-width: 100%;
+  .popup-button-svg {
+    display: none;
   }
 }
 
@@ -733,6 +832,7 @@ nav {
     .work-item-image {
       width: 100%;
       margin-right: 46px;
+      max-width: 50%;
     }
 
     .reverse-image {
@@ -745,6 +845,19 @@ nav {
     }
 
     /* endwork */
+    .popup-content {
+      display: flex;
+    }
+
+    .popup-elements {
+      min-width: 50%;
+      margin-left: 10px;
+    }
+
+    .popup-container {
+      width: 70%;
+      margin: 5% 15%;
+    }
 
     /* about */
     .about {
@@ -814,5 +927,17 @@ nav {
     }
 
     /* end contact  */
+  }
+
+  @media (min-width: 1200px) {
+    .popup-elements {
+      min-width: 40%;
+      margin-left: 20px;
+    }
+
+    .popup-container {
+      width: 60%;
+      margin: 3% 20%;
+    }
   }
 }
