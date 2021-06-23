@@ -250,6 +250,7 @@ closePopup.addEventListener('click', hidePopup);
 const form = document.getElementById('form');
 const errorSpan = document.querySelector('.error');
 const { email } = form.elements;
+
 function clearValidation() {
   errorSpan.style.display = 'none';
 }
