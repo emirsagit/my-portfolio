@@ -9,7 +9,6 @@ document.getElementById('hamburger').addEventListener('click', toggle);
 
 /* dynamically created work item list elements */
 // first defined work items array
-const portfolio = document.getElementById('portfolio');
 const workItems = [
   {
     id: 1,
@@ -53,104 +52,129 @@ const workItems = [
   },
 ];
 
-// created child elements
-function addElementsToDiv(div, item) {
-  const h2 = document.createElement('h2');
-  const div2 = document.createElement('div');
-  const parentP = document.createElement('p');
-  const div3 = document.createElement('div');
-  const button = document.createElement('button');
-
-  h2.className = 'project-name';
-  const newTextNode = document.createTextNode(item.title);
-  h2.appendChild(newTextNode);
-  div.appendChild(h2);
-
-  div2.className = 'work-header-items';
-  const p1 = document.createElement('p');
-  const p2 = document.createElement('p');
-  const p3 = document.createElement('p');
-  const span1 = document.createElement('span');
-  const span2 = document.createElement('span');
-  const newTextNode1 = document.createTextNode('CANOPY');
-  const newTextNode2 = document.createTextNode('Back End Dev');
-  const newTextNode3 = document.createTextNode('2015');
-  p1.appendChild(newTextNode1);
-  p2.appendChild(newTextNode2);
-  p3.appendChild(newTextNode3);
-  p1.classList.add('work-header-item-one', 'work-header-item-margin');
-  p2.classList.add('work-header-item-margin');
-  p3.classList.add('work-header-item-margin');
-  span1.classList.add('work-header-item-round', 'work-header-item-margin');
-  span2.classList.add('work-header-item-round', 'work-header-item-margin');
-  div2.appendChild(p1);
-  div2.appendChild(span1);
-  div2.appendChild(p2);
-  div2.appendChild(span2);
-  div2.appendChild(p3);
-  div.appendChild(div2);
-
-  parentP.className = 'work-pharagraph';
-  const newTextNode4 = document.createTextNode(item.description);
-  parentP.appendChild(newTextNode4);
-  div.appendChild(parentP);
-
-  div3.className = 'work-tags';
-  for (let i = 0; i < item.technologies.length; i += 1) {
-    const a = document.createElement('a');
-    a.className = 'work-tag';
-    a.setAttribute('href', '#');
-    const textNode5 = document.createTextNode(item.technologies[i]);
-    a.appendChild(textNode5);
-    div3.appendChild(a);
+function createElement(item, key, element, parent = null) {
+  const createdElement = document.createElement(element.element);
+  if (element.attributes) {
+    const attributes = Object.keys(element.attributes);
+    attributes.forEach((key) => {
+      createdElement.setAttribute(key, element.attributes[key]);
+    });
   }
-  div.appendChild(div3);
-
-  button.className = 'bg-white-button work-button';
-  button.setAttribute('aria-label', 'project');
-  button.setAttribute('type', 'button');
-  const textNode6 = document.createTextNode('See Project');
-  button.appendChild(textNode6);
-  div.appendChild(button);
-
-  return div;
-}
-
-// created parent elements
-function createElement(item, i) {
-  const li = document.createElement('li');
-  const img = document.createElement('img');
-  let div = document.createElement('div');
-
-  if (i % 2 === 0) {
-    li.className = 'work-item';
-  } else {
-    li.classList.add('work-item', 'reverse');
+  if (element.classes) {
+    const { classes } = element;
+    classes.forEach((key) => {
+      createdElement.classList.add(key);
+    });
   }
-  li.id = item.id;
-  img.setAttribute('src', item.imgSrc);
-  img.setAttribute('srcSet', item.imgSrcSet);
-  img.setAttribute('alt', item.title);
-  img.setAttribute('sizes', '(max-width: 600px) 295px, 544px');
-  if (i % 2 === 0) {
-    img.className = 'work-item-image';
-  } else {
-    img.classList.add('work-item-image', 'reverse-image');
+  if (element.text) {
+    const textNodeElement = document.createTextNode(element.text);
+    createdElement.appendChild(textNodeElement);
   }
-  li.appendChild(img);
-
-  div.className = 'work-content';
-  div = addElementsToDiv(div, item);
-  li.appendChild(div);
-  portfolio.appendChild(li);
+  if (element.id) {
+    createdElement.id = element.id;
+  }
+  if (parent) {
+    parent.appendChild(createdElement);
+  }
+  if (element.children) {
+    for (let i = 0; i < element.children.length; i += 1) {
+      createElement(item, key, element.children[i], createdElement);
+    }
+  }
+  return createdElement;
 }
 
 // dynamically create workitems elements
 for (let i = 0; i < workItems.length; i += 1) {
-  createElement(workItems[i], i);
+  const elements = {
+    element: 'li',
+    id: i + 1,
+    classes: i % 2 === 0 ? ['work-item'] : ['work-item', 'reverse'],
+    children: [
+      {
+        element: 'img',
+        attributes: {
+          src: workItems[i].imgSrc,
+          srcset: workItems[i].imgSrcSet,
+          alt: 'tonic',
+          sizes: '(max-width: 600px) 295px, 544px',
+        },
+        classes: i % 2 === 0 ? ['work-item-image'] : ['work-item-image', 'reverse-image'],
+      },
+      {
+        element: 'div',
+        classes: ['work-content'],
+        children: [
+          {
+            element: 'h2',
+            text: workItems[i].title,
+            classes: ['project-name'],
+          },
+          {
+            element: 'div',
+            classes: ['work-header-items'],
+            children: [
+              {
+                element: 'p',
+                text: 'CANOPY',
+                classes: ['work-header-item-one', 'work-header-item-margin'],
+              },
+              {
+                element: 'span',
+                classes: ['work-header-item-round', 'work-header-item-margin'],
+              },
+              {
+                element: 'p',
+                text: 'Back End Dev',
+                classes: ['work-header-item-margin'],
+              },
+              {
+                element: 'span',
+                classes: ['work-header-item-round', 'work-header-item-margin'],
+              },
+              {
+                element: 'p',
+                text: '2015',
+                classes: ['work-header-item-margin'],
+              },
+            ],
+          },
+          {
+            element: 'p',
+            text: workItems[i].description,
+            classes: ['work-pharagraph'],
+          },
+          {
+            element: 'div',
+            classes: ['work-tags'],
+            children: [],
+          },
+          {
+            element: 'button',
+            classes: ['bg-white-button', 'work-button'],
+            text: 'See Project',
+            attributes: {
+              type: 'button',
+            },
+          },
+        ],
+      },
+    ],
+  };
+  for (let t = 0; t < workItems[i].technologies.length; t += 1) {
+    elements.children[1].children[3].children.push({
+      element: 'a',
+      text: workItems[i].technologies[t],
+      classes: ['work-tag'],
+      attributes: { href: '#' },
+    });
+  }
+  const createdElement = createElement(workItems[i], i, elements);
+  document.getElementById('portfolio').appendChild(createdElement);
 }
 
 /* popup functionality */
+// dom elements
 const popup = document.getElementById('popup');
 const image = document.getElementById('popup-image');
 const popupName = document.getElementById('popup-name');
@@ -161,6 +185,7 @@ const seeSource = document.getElementById('see-source');
 const seeLive = document.getElementById('see-live');
 const { body } = document;
 
+// create technologies
 function createTagElements(item) {
   for (let i = 0; i < item.technologies.length; i += 1) {
     const a = document.createElement('a');
@@ -172,20 +197,23 @@ function createTagElements(item) {
   }
 }
 
+// show popup
 function showPopup(e) {
   const item = e.target.parentNode.parentNode;
   const workItem = workItems[item.id - 1];
+  createTagElements(workItem);
   popupName.textContent = workItem.title;
   popupContent.textContent = workItem.description;
   image.src = workItem.imgSrc;
   image.srcset = workItem.imgSrcSet;
   seeSource.setAttribute('href', workItem.linkSource);
   seeLive.setAttribute('href', workItem.linkLive);
-  createTagElements(workItem);
   popup.classList.add('d-flex');
   body.classList.add('noscroll');
   popupSection.classList.add('popup-section');
 }
+
+// hide popup
 function hidePopup(e) {
   e.preventDefault();
   const tags = document.querySelectorAll('.popup-tag');
@@ -197,6 +225,7 @@ function hidePopup(e) {
   popupSection.classList.remove('popup-section');
 }
 
+// added popup event listeners
 const closePopup = document.querySelector('.close-popup');
 const buttons = document.getElementsByClassName('work-button');
 for (let i = 0; i < buttons.length; i += 1) {
