@@ -52,6 +52,7 @@ const workItems = [
   },
 ];
 
+// dynamically create workitems html tags, attributes, classes and text
 function createElement(item, key, element, parent = null) {
   const createdElement = document.createElement(element.element);
   if (element.attributes) {
@@ -73,9 +74,11 @@ function createElement(item, key, element, parent = null) {
   if (element.id) {
     createdElement.id = element.id;
   }
+  // If createdElement is child I will append it to the parent
   if (parent) {
     parent.appendChild(createdElement);
   }
+  // below I call createElement function until all the child elements were created
   if (element.children) {
     for (let i = 0; i < element.children.length; i += 1) {
       createElement(item, key, element.children[i], createdElement);
@@ -84,7 +87,8 @@ function createElement(item, key, element, parent = null) {
   return createdElement;
 }
 
-// dynamically create workitems elements
+/* First I created elements and its nested children with classes, ids, attributes, text.
+Then foreach workItems element (defined at the top) I call the above createElement function */
 for (let i = 0; i < workItems.length; i += 1) {
   const elements = {
     element: 'li',
@@ -161,6 +165,8 @@ for (let i = 0; i < workItems.length; i += 1) {
       },
     ],
   };
+  /*   I didn't know how many technologies used for each project.
+  So I added them dynamically after elements object created */
   for (let t = 0; t < workItems[i].technologies.length; t += 1) {
     elements.children[1].children[3].children.push({
       element: 'a',
@@ -169,12 +175,14 @@ for (let i = 0; i < workItems.length; i += 1) {
       attributes: { href: '#' },
     });
   }
+  // call createElement function for each project (work) item
   const createdElement = createElement(workItems[i], i, elements);
+  // above function return the created parent html element. Below I appended it to the DOM
   document.getElementById('portfolio').appendChild(createdElement);
 }
 
 /* popup functionality */
-// dom elements
+// popup section dom elements
 const popup = document.getElementById('popup');
 const image = document.getElementById('popup-image');
 const popupName = document.getElementById('popup-name');
@@ -185,7 +193,7 @@ const seeSource = document.getElementById('see-source');
 const seeLive = document.getElementById('see-live');
 const { body } = document;
 
-// create technologies
+// dynamically create and add technologies elements for the popup section
 function createTagElements(item) {
   for (let i = 0; i < item.technologies.length; i += 1) {
     const a = document.createElement('a');
@@ -197,17 +205,22 @@ function createTagElements(item) {
   }
 }
 
-// show popup
-function showPopup(e) {
-  const item = e.target.parentNode.parentNode;
-  const workItem = workItems[item.id - 1];
-  createTagElements(workItem);
+// dynamically manipulate html tags. Add corresponding project (work) array item.
+function manipulatePopupElements(workItem) {
   popupName.textContent = workItem.title;
   popupContent.textContent = workItem.description;
   image.src = workItem.imgSrc;
   image.srcset = workItem.imgSrcSet;
   seeSource.setAttribute('href', workItem.linkSource);
   seeLive.setAttribute('href', workItem.linkLive);
+}
+
+// show popup
+function showPopup(e) {
+  const item = e.target.parentNode.parentNode;
+  const workItem = workItems[item.id - 1];
+  createTagElements(workItem);
+  manipulatePopupElements(workItem);
   body.classList.add('noscroll');
   popup.classList.add('d-flex');
   popupSection.classList.add('popup-section');
