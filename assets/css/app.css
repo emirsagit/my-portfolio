@@ -117,6 +117,10 @@ hr {
   overflow: hidden;
 }
 
+.overflow-scroll {
+  overflow-y: scroll;
+}
+
 .text-white {
   color: white;
 }
@@ -417,7 +421,7 @@ nav {
 }
 
 .popup-container {
-  overflow: hidden;
+  overflow-y: auto;
   z-index: 50;
   width: 90%;
   background: white;
@@ -825,6 +829,7 @@ nav {
     .work-item-image {
       width: 100%;
       margin-right: 46px;
+      max-width: 50%;
     }
 
     .reverse-image {

@@ -208,8 +208,8 @@ function showPopup(e) {
   image.srcset = workItem.imgSrcSet;
   seeSource.setAttribute('href', workItem.linkSource);
   seeLive.setAttribute('href', workItem.linkLive);
-  popup.classList.add('d-flex');
   body.classList.add('noscroll');
+  popup.classList.add('d-flex', 'overflow-scroll');
   popupSection.classList.add('popup-section');
 }
 
