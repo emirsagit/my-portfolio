@@ -209,7 +209,7 @@ function showPopup(e) {
   seeSource.setAttribute('href', workItem.linkSource);
   seeLive.setAttribute('href', workItem.linkLive);
   body.classList.add('noscroll');
-  popup.classList.add('d-flex', 'overflow-scroll');
+  popup.classList.add('d-flex');
   popupSection.classList.add('popup-section');
 }
 
