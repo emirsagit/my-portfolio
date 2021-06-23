@@ -1,6 +1,5 @@
 /* nav menu */
 const navigation = document.getElementById('navigation');
-const portfolio = document.getElementById('portfolio');
 function toggle() {
   navigation.classList.toggle('mobile-hidden');
 }
@@ -10,13 +9,14 @@ document.getElementById('hamburger').addEventListener('click', toggle);
 
 /* dynamically created work item list elements */
 // first defined work items array
+const portfolio = document.getElementById('portfolio');
 const workItems = [
   {
     id: 1,
     imgSrc: './assets/img/work/SnapshootPortfolio1.png',
     imgSrcSet: './assets/img/work/SnapshootPortfolio1.png 295w, ./assets/img/work/SnapshootPortfolio1desktop.png 544w',
     title: 'Tonic',
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required.',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essent",
     technologies: ['html', 'css', 'javascript'],
     linkLive: 'https://emirsagit.github.io/my-portfolio/',
     linkSource: 'https://github.com/emirsagit/my-portfolio',
@@ -26,7 +26,7 @@ const workItems = [
     imgSrc: './assets/img/work/SnapshootPortfolio2.png',
     imgSrcSet: './assets/img/work/SnapshootPortfolio2.png 295w, ./assets/img/work/SnapshootPortfolio2desktop.png 544w',
     title: 'Multi-Post Stories',
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required.',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essent",
     technologies: ['html', 'css', 'javascript'],
     linkLive: 'https://emirsagit.github.io/my-portfolio/',
     linkSource: 'https://github.com/emirsagit/my-portfolio',
@@ -36,7 +36,7 @@ const workItems = [
     imgSrc: './assets/img/work/SnapshootPortfolio3.png',
     imgSrcSet: './assets/img/work/SnapshootPortfolio3.png 295w, ./assets/img/work/SnapshootPortfolio3desktop.png 544w',
     title: 'Tonic',
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required.',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essent",
     technologies: ['html', 'css', 'javascript'],
     linkLive: 'https://emirsagit.github.io/my-portfolio/',
     linkSource: 'https://github.com/emirsagit/my-portfolio',
@@ -46,7 +46,7 @@ const workItems = [
     imgSrc: './assets/img/work/SnapshootPortfolio4.png',
     imgSrcSet: './assets/img/work/SnapshootPortfolio4.png 295w, ./assets/img/work/SnapshootPortfolio4desktop.png 544w',
     title: 'Multi-Post Stories',
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required.',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essent",
     technologies: ['html', 'css', 'javascript'],
     linkLive: 'https://emirsagit.github.io/my-portfolio/',
     linkSource: 'https://github.com/emirsagit/my-portfolio',
@@ -62,7 +62,7 @@ function addElementsToDiv(div, item) {
   const button = document.createElement('button');
 
   h2.className = 'project-name';
-  const newTextNode = document.createTextNode('Tonic');
+  const newTextNode = document.createTextNode(item.title);
   h2.appendChild(newTextNode);
   div.appendChild(h2);
 
@@ -106,7 +106,7 @@ function addElementsToDiv(div, item) {
   }
   div.appendChild(div3);
 
-  button.className = 'bg-white-button';
+  button.className = 'bg-white-button work-button';
   button.setAttribute('aria-label', 'project');
   button.setAttribute('type', 'button');
   const textNode6 = document.createTextNode('See Project');
@@ -117,17 +117,26 @@ function addElementsToDiv(div, item) {
 }
 
 // created parent elements
-function createElement(item) {
+function createElement(item, i) {
   const li = document.createElement('li');
   const img = document.createElement('img');
   let div = document.createElement('div');
-  li.className = 'work-item';
 
+  if (i % 2 === 0) {
+    li.className = 'work-item';
+  } else {
+    li.classList.add('work-item', 'reverse');
+  }
+  li.id = item.id;
   img.setAttribute('src', item.imgSrc);
   img.setAttribute('srcSet', item.imgSrcSet);
   img.setAttribute('alt', item.title);
   img.setAttribute('sizes', '(max-width: 600px) 295px, 544px');
-  img.className = 'work-item-image';
+  if (i % 2 === 0) {
+    img.className = 'work-item-image';
+  } else {
+    img.classList.add('work-item-image', 'reverse-image');
+  }
   li.appendChild(img);
 
   div.className = 'work-content';
@@ -138,7 +147,59 @@ function createElement(item) {
 
 // dynamically create workitems elements
 for (let i = 0; i < workItems.length; i += 1) {
-  createElement(workItems[i]);
+  createElement(workItems[i], i);
 }
 
-// popup functionality
+/* popup functionality */
+const popup = document.getElementById('popup');
+const image = document.getElementById('popup-image');
+const popupName = document.getElementById('popup-name');
+const popupContent = document.getElementById('popup-content');
+const popupSection = document.getElementById('popup-section');
+const popupTags = document.getElementById('popup-tags');
+const seeSource = document.getElementById('see-source');
+const seeLive = document.getElementById('see-live');
+const { body } = document;
+
+function createTagElements(item) {
+  for (let i = 0; i < item.technologies.length; i += 1) {
+    const a = document.createElement('a');
+    const nodeText9 = document.createTextNode(item.technologies[i]);
+    a.setAttribute('href', '#');
+    a.className = 'popup-tag';
+    a.appendChild(nodeText9);
+    popupTags.appendChild(a);
+  }
+}
+
+function showPopup(e) {
+  const item = e.target.parentNode.parentNode;
+  const workItem = workItems[item.id - 1];
+  popupName.textContent = workItem.title;
+  popupContent.textContent = workItem.description;
+  image.src = workItem.imgSrc;
+  image.srcset = workItem.imgSrcSet;
+  seeSource.setAttribute('href', workItem.linkSource);
+  seeLive.setAttribute('href', workItem.linkLive);
+  createTagElements(workItem);
+  popup.classList.add('d-flex');
+  body.classList.add('noscroll');
+  popupSection.classList.add('popup-section');
+}
+function hidePopup(e) {
+  e.preventDefault();
+  const tags = document.querySelectorAll('.popup-tag');
+  for (let i = 0; i < tags.length; i += 1) {
+    tags[i].parentNode.removeChild(tags[i]);
+  }
+  popup.classList.remove('d-flex');
+  body.classList.remove('noscroll');
+  popupSection.classList.remove('popup-section');
+}
+
+const closePopup = document.querySelector('.close-popup');
+const buttons = document.getElementsByClassName('work-button');
+for (let i = 0; i < buttons.length; i += 1) {
+  buttons[i].addEventListener('click', showPopup);
+}
+closePopup.addEventListener('click', hidePopup);
