@@ -6,3 +6,5 @@ node_modules/
 package-lock.json
 package.json
 existing.js
+app.html
+elements.js
