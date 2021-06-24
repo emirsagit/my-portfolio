@@ -185,6 +185,19 @@ hr {
   display: inline-flex;
 }
 
+.error {
+  background: red;
+  border: 1px solid #6070ff;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: white;
+  user-select: none;
+  margin-left: 8px;
+  display: none;
+  align-self: flex-end;
+}
+
 /* end general items */
 
 /* nav */
@@ -666,6 +679,11 @@ nav {
   outline: none;
 }
 
+.form-element-button {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* end contact  */
 
 @media only screen and (max-width: 290px) {
@@ -918,11 +936,6 @@ nav {
     .form-container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-    }
-
-    .form-element-button {
-      display: flex;
       justify-content: center;
     }
 

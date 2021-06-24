@@ -245,3 +245,26 @@ for (let i = 0; i < buttons.length; i += 1) {
   buttons[i].addEventListener('click', showPopup);
 }
 closePopup.addEventListener('click', hidePopup);
+
+/* form email validation */
+const form = document.getElementById('form');
+const errorSpan = document.querySelector('.error');
+const { email } = form.elements;
+
+function clearValidation() {
+  errorSpan.style.display = 'none';
+}
+
+function validate(e) {
+  if (email.value === email.value.toLowerCase()) {
+    clearValidation();
+    form.submit();
+  } else {
+    e.preventDefault();
+    errorSpan.textContent = 'Email must be lowercase. Try again';
+    errorSpan.style.display = 'flex';
+  }
+}
+
+form.addEventListener('submit', validate);
+email.addEventListener('keypress', clearValidation);
