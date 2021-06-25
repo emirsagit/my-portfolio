@@ -248,15 +248,17 @@ closePopup.addEventListener('click', hidePopup);
 
 /* form email validation */
 const form = document.getElementById('form');
+const formEmail = form.elements.form_email;
+const formName = form.elements.form_name;
+const formMessage = form.elements.form_message;
 const errorSpan = document.querySelector('.error');
-const { email } = form.elements;
 
 function clearValidation() {
   errorSpan.style.display = 'none';
 }
 
 function validate(e) {
-  if (email.value === email.value.toLowerCase()) {
+  if (formEmail.value === formEmail.value.toLowerCase()) {
     clearValidation();
     form.submit();
   } else {
@@ -267,4 +269,36 @@ function validate(e) {
 }
 
 form.addEventListener('submit', validate);
-email.addEventListener('keypress', clearValidation);
+formEmail.addEventListener('keypress', clearValidation);
+
+/* preserve data in browser */
+
+let formData = {
+  form_name: '',
+  form_email: '',
+  form_message: '',
+};
+
+function setFormData(e) {
+  formData[e.target.name] = e.target.value;
+  localStorage.setItem('formData', JSON.stringify(formData));
+}
+
+function getFormData(storageFormData) {
+  formData = JSON.parse(storageFormData);
+}
+
+function assignFormDataToHtml() {
+  formName.value = formData.form_name;
+  formEmail.value = formData.form_email;
+  formMessage.value = formData.form_message;
+}
+
+if (localStorage.getItem('formData')) {
+  getFormData(localStorage.getItem('formData'));
+  assignFormDataToHtml();
+}
+
+formEmail.addEventListener('keyup', setFormData);
+formName.addEventListener('keyup', setFormData);
+formMessage.addEventListener('keyup', setFormData);
